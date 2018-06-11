@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0">
+
+    <!-- ########## 日常问候 ########## -->
+    <category>
+        <pattern>你好</pattern>
+        <template>
+            <random>
+                <li>你好啊~</li>
+                <li>Hi</li>
+                <li>哈喽，你好</li>
+                <li>Hello~</li>
+            </random>
+        </template>
+    </category>
+
+    <category>
+        <pattern>HI</pattern>
+        <template>
+            <srai>你好</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>HI *</pattern>
+        <template>
+            <srai>你好</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>HELLO</pattern>
+        <template>
+            <srai>你好</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>HELLO *</pattern>
+        <template>
+            <srai>你好</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* 你好</pattern>
+        <template>
+            <srai>你好</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>晚安</pattern>
+        <template>
+            <random>
+                <li>晚安</li>
+                <li>Sleep tight~</li>
+                <li>Good night~</li>
+            </random>
+        </template>
+    </category>
+
+    <category>
+        <pattern>晚安 *</pattern>
+        <template>
+            <srai>晚安</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>* 晚安</pattern>
+        <template>
+            <srai>晚安</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>再见</pattern>
+        <template>
+            <random>
+                <li>88</li>
+                <li>拜拜</li>
+                <li>再见</li>
+                <li>慢走不送~</li>
+                <li>good bye</li>
+                <li>bye~</li>
+            </random>
+        </template>
+    </category>
+
+    <category>
+        <pattern>再见 *</pattern>
+        <template>
+            <srai>再见</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>* 再见</pattern>
+        <template>
+            <srai>再见</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>88</pattern>
+        <template>
+            <srai>再见</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>* 拜拜</pattern>
+        <template>
+            <srai>再见</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>拜拜 *</pattern>
+        <template>
+            <srai>再见</srai>
+        </template>
+    </category>
+
+    <!-- ########## 称赞 ########## -->
+    <category>
+        <pattern>你好 *</pattern>
+        <template>
+            <think>
+                <set name="star"><star index="1"/></set>
+            </think>
+            <condition name="star">
+                <li value="啊"><srai>你好</srai></li>
+                <li value="呀"><srai>你好</srai></li>
+                <li value="萌"><srai>夸奖</srai></li>
+                <li value="萌啊"><srai>夸奖</srai></li>
+                <li value="棒"><srai>夸奖</srai></li>
+                <li value="棒啊"><srai>夸奖</srai></li>
+                <li value="聪明"><srai>夸奖</srai></li>
+                <li value="善良"><srai>夸奖</srai></li>
+                <li value="历害"><srai>夸奖</srai></li>
+                <li value="文艺"><srai>夸奖</srai></li>
+                <li value="牛逼"><srai>夸奖</srai></li>
+                <li value="强"><srai>夸奖</srai></li>
+                <li value="强啊"><srai>夸奖</srai></li>
+                <li value="聪明啊"><srai>夸奖</srai></li>
+                <li value="善良啊"><srai>夸奖</srai></li>
+                <li value="历害啊"><srai>夸奖</srai></li>
+                <li value="文艺啊"><srai>夸奖</srai></li>
+                <li value="牛逼啊"><srai>夸奖</srai></li>
+                <li><srai>找不到答案</srai></li>
+            </condition>
+        </template>
+    </category>
+
+    <category>
+        <pattern>你真 *</pattern>
+        <template>
+            <think>
+                <set name="star"><star index="1"/></set>
+            </think>
+            <condition name="star">
+                <li value="萌"><srai>夸奖</srai></li>
+                <li value="萌啊"><srai>夸奖</srai></li>
+                <li value="棒"><srai>夸奖</srai></li>
+                <li value="棒啊"><srai>夸奖</srai></li>
+                <li value="聪明"><srai>夸奖</srai></li>
+                <li value="善良"><srai>夸奖</srai></li>
+                <li value="历害"><srai>夸奖</srai></li>
+                <li value="文艺"><srai>夸奖</srai></li>
+                <li value="牛逼"><srai>夸奖</srai></li>
+                <li value="强"><srai>夸奖</srai></li>
+                <li value="强啊"><srai>夸奖</srai></li>
+                <li value="聪明啊"><srai>夸奖</srai></li>
+                <li value="善良啊"><srai>夸奖</srai></li>
+                <li value="历害啊"><srai>夸奖</srai></li>
+                <li value="文艺啊"><srai>夸奖</srai></li>
+                <li value="牛逼啊"><srai>夸奖</srai></li>
+                <li><srai>找不到答案</srai></li>
+            </condition>
+        </template>
+    </category>
+
+    <category>
+        <pattern>夸奖</pattern>
+        <template>
+            <random>
+                <li>嘿嘿，过奖了。</li>
+                <li>嗨嗨，他们都说我<get name="star"/> ʅ(‾◡◝)ʃ </li>
+            </random>
+        </template>
+    </category>
+
+    <!-- ########## 找不到答案 ########## -->
+    <category>
+        <pattern>找不到答案</pattern>
+        <template>
+            <random>
+                <li>不知道啊</li>
+                <li>纳尼？？? </li>
+                <li>这我就不知道了</li>
+                <li>。。。不知道额</li>
+            </random>
+        </template>
+    </category>
+
+    <!-- ########## 句子长度过长 ########## -->
+    <category>
+        <pattern>句子长度过长</pattern>
+        <template>
+            <random>
+                <li>信息量有点大，容我想想</li>
+                <li>信息量有点大</li>
+                <li>容我想想，信息量有点大</li>
+            </random>
+        </template>
+    </category>
+
+    <!-- ########## 内容缺失 ########## -->
+    <category>
+        <pattern>内容缺失</pattern>
+        <template>
+            <random>
+                <li>嗯？你想说啥？</li>
+                <li>你想说啥呀？</li>
+                <li>你到底想说什么？</li>
+            </random>
+        </template>
+    </category>
+
+    <!-- ########## 匹配不到内容 ########## -->
+    <category>
+        <pattern>*</pattern>
+        <template>
+            <think>
+                <set name="star"><star /></set>
+            </think>
+            #NoMatchingTemplate:<get name="star" />
+        </template>
+    </category>
+
+    <!-- ########## 闲聊 ########## -->
+    <category>
+        <pattern>闲聊</pattern>
+        <template>
+            <random>
+                <li>是吗?</li>
+                <li>我不太明白你的意思</li>
+                <li>原来如此</li>
+                <li>哦嚯~</li>
+            </random>
+        </template>
+    </category>
+
+    <category>
+        <pattern>CHITCHAT</pattern>
+        <template>
+            <srai>闲聊</srai>
+        </template>
+    </category>
+
+</aiml>

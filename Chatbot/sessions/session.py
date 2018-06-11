@@ -5,7 +5,7 @@ Created on 18/5/28 下午4:44.
 Author: Ruizhang1993 (zhang1rui4@foxmail.com)
 """
 import uuid
-from chatbot.sessions.queue import ResponseQueue
+from Chatbot.sessions.queue import ResponseQueue
 import time
 
 

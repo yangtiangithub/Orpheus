@@ -25,7 +25,9 @@ class Preprocessor(object):
         """
         stmt.set_split_text(self.segment(stmt.text))
 
-        stmt.set_emotion(self.emotion_analysis(stmt.text))
+        stmt.set_emotion(self.emotion_analysis(stmt.text, None))
+
+        return stmt
 
     def segment(self, text, cut_all=False, HMM=True):
         return list(jieba.cut(text, cut_all=cut_all, HMM=HMM))
