@@ -6,7 +6,6 @@ Author: Ruizhang1993 (zhang1rui4@foxmail.com)
 """
 import jieba
 
-
 class Preprocessor(object):
 
     def __init__(self, configs):

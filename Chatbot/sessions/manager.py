@@ -7,7 +7,13 @@ Author: Ruizhang1993 (zhang1rui4@foxmail.com)
 from Chatbot.sessions.user import User
 from Chatbot.sessions.session import Session
 
-
+"""
+SessionManager:
+    - 处理数据库连接
+    - 记录用户信息
+    - 记录用户和Session之间的相关关系
+    - 跟踪Session内容信息、是否过期等等
+"""
 class Manager(object):
 
     def __init__(self, configs):
