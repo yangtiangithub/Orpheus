@@ -3,7 +3,7 @@
     <category>
         <pattern>LOAD AIML CN</pattern>
         <template>
-            <learn>aiml/test.aiml</learn>
+            <learn>aiml/music_search.aiml</learn>
         </template>
     </category>
 

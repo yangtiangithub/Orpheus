@@ -12,8 +12,8 @@ class AimlNLG(object):
         self.configs = configs
 
         self.aiml = aiml.Kernel()
-        self.aiml.learn("./aiml/nlg-startup.xml")
-        self.aiml.respond("load aiml cn")
+        self.aiml.learn(self.configs.aiml_nlg_path)
+        self.aiml.respond(self.configs.aiml_nlg_learn)
 
     def process(self, status, target, policy):
         response = self.aiml.respond(target)

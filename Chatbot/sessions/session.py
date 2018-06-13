@@ -17,7 +17,7 @@ class Session(object):
         self.conversation = ResponseQueue(maxsize=maxsize)
 
         # last
-        self.last_conversate_time = int()
+        self.last_conversate_time = int(time.time())
         self.last_status = None
         self.last_target = None
         self.last_domain = None

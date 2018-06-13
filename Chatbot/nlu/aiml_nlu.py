@@ -12,13 +12,38 @@ class AimlNLU(object):
         self.configs = configs
 
         self.aiml = aiml.Kernel()
-        self.aiml.learn("./aiml/nlu-startup.xml")
-        self.aiml.respond("load aiml cn")
+        self.aiml.learn(configs.aiml_nlu_path)
+        self.aiml.respond(configs.aiml_nlu_learn)
 
     def process(self, stmt):
         res = self.aiml.respond(stmt.text)
 
-        if "Greeting" in res:
+        if self.configs.debug_mode: print("[AimlNLU]:\'%s\'" % res)
+
+        if "Greeting" in res:               # 问候
             return "Greeting", None
+        elif "SEARCHBYSONG" in res:         # 按歌曲名搜索
+            song = res.strip().split(":")[-1]
+            return "SearchBySong", {"song": song}
+        elif "SEARCHBYSINGER" in res:       # 按歌手搜索
+            singer = res.strip().split(":")[-1]
+            return "SearchBySinger", {"singer": singer}
+        elif "SEARCHBYTYPE" in res:         # 按歌曲类型搜索
+            type = res.strip().split(":")[-1]
+            return "SearchByType", {"type": type}
+        elif "SEARCHBYSCENE" in res:        # 按场景搜索
+            scene = res.strip().split(":")[-1]
+            return "SearchByScene", {"scene": scene}
         else:
             return None, None
+
+if __name__ == "__main__":
+
+    from Chatbot.configs import Configs
+    from Chatbot.sessions.statement import Statement
+    cfg = Configs()
+
+    cfg.aiml_nlu_path = "../aiml/nlu-startup.xml"
+
+    nlu = AimlNLU(cfg)
+    nlu.process(Statement(text="搜 haoting 的歌"))

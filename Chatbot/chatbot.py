@@ -61,5 +61,7 @@ if __name__ == "__main__":
     configs = Configs()
     chatbot = Chatbot(configs)
 
-    response = chatbot.listen(u"你好")
-    print(response)
+    while True:
+        speech = input(">> ")
+        res = chatbot.listen(speech)
+        print(res)

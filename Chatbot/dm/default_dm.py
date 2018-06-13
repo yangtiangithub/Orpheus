@@ -16,4 +16,4 @@ class DefaultDM(object):
         if intent == "Greeting":
             return None, "REACTGREET", None
 
-        return None, None, None
+        return None, "REACTGREET", None
