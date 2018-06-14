@@ -3,4 +3,4 @@
 __init__.py
 *.pyc
 __pycache__
-Chatbot/ltp/*
+Chatbot/utils/ltp/models/*
