@@ -12,20 +12,28 @@ class Statement(object):
                  from_user=True):
 
         self.text = text
-        self.from_user = from_user
-        self.context = None
 
-        self.split_text = None
+        self.segment = None
+        self.pos = None
         self.emotion = None
 
-    def set_split_text(self, split_text):
-        self.split_text = split_text
+        self.from_user = from_user
 
-    def get_split_text(self):
-        return self.split_text
+
+    def set_segment(self, segment):
+        self.segment = segment
+
+    def get_segment(self):
+        return self.segment
 
     def set_emotion(self, emotion):
         self.emotion = emotion
 
     def get_emotion(self):
         return self.emotion
+
+    def set_pos(self, pos):
+        self.pos = pos
+
+    def get_pos(self):
+        return self.pos

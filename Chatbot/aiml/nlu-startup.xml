@@ -1,9 +1,13 @@
 <aiml version="1.0">
 
     <category>
-        <pattern>LOAD AIML CN</pattern>
+        <pattern>LOAD AIML NLU</pattern>
         <template>
-            <learn>aiml/music_search.aiml</learn>
+            <learn>aiml/common.aiml</learn>
+            <learn>aiml/music_search/search_by_scene.aiml</learn>
+            <learn>aiml/music_search/search_by_singer.aiml</learn>
+            <learn>aiml/music_search/search_by_song.aiml</learn>
+            <learn>aiml/music_search/search_by_type.aiml</learn>
         </template>
     </category>
 

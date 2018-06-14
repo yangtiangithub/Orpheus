@@ -21,6 +21,6 @@ class Configs(object):
 
         # AIML
         self.aiml_nlu_path = "./aiml/nlu-startup.xml"
-        self.aiml_nlu_learn = "load aiml cn"
+        self.aiml_nlu_pattern = "load aiml nlu"
         self.aiml_nlg_path = "./aiml/nlg-startup.xml"
-        self.aiml_nlg_learn = "load aiml cn"
+        self.aiml_nlg_pattern = "load aiml nlg"

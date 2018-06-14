@@ -13,7 +13,7 @@ class AimlNLG(object):
 
         self.aiml = aiml.Kernel()
         self.aiml.learn(self.configs.aiml_nlg_path)
-        self.aiml.respond(self.configs.aiml_nlg_learn)
+        self.aiml.respond(self.configs.aiml_nlg_pattern)
 
     def process(self, status, target, policy):
         response = self.aiml.respond(target)
