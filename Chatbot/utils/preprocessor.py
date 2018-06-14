@@ -4,20 +4,12 @@ Created on 18/5/28 下午5:07.
 
 Author: Ruizhang1993 (zhang1rui4@foxmail.com)
 """
-import pyltp
-import jieba.posseg as pseg
+from Chatbot.utils.ltp.ltp_util import LtpUtil
 
 class Preprocessor(object):
 
     def __init__(self, configs):
-
-        # 初始化jieba分词词表
-
-        # 初始化依存句法分析工具
-
-        # 初始化词表
-
-        pass
+        self.ltp_util = LtpUtil(configs)
 
     def process(self, stmt):
         """
@@ -26,25 +18,28 @@ class Preprocessor(object):
 
         # 分词和词性标注
         seg, pos = self.cut(stmt.text)
-        stmt.set_segment(seg)
-        stmt.set_pos(pos)
+        arcs = self.dependency_parse(seg, pos)
+
+        stmt.set_segment(list(seg))
+        stmt.set_pos(list(pos))
 
         stmt.set_emotion(self.emotion_analysis(stmt.text, None))
 
         return stmt
 
     def cut(self, text, HMM=True):
-        results = pseg.cut(text, HMM=HMM)
-        seg, pos = [], []
-        for s,p in results:
-            seg.append(s)
-            pos.append(p)
+        seg = self.ltp_util.Segmentor(text)
+        pos = self.ltp_util.Postagger(seg)
 
         return seg, pos
 
-    def dependency_parse(self, text):
+    def dependency_parse(self, seg, pos):
         # 调用pyltp进行依存句法分析
-        return None
+        arcs = self.ltp_util.Parser(seg, pos)
+        parse_result = []
+        for item in list(arcs):
+            parse_result.append((item.head-1, item.relation))
+        return parse_result
 
     def emotion_analysis(self, text, contexts):
         # 返回情感分析结果
@@ -53,10 +48,16 @@ class Preprocessor(object):
 if __name__ == "__main__":
     from Chatbot.sessions.statement import Statement
 
-    p = Preprocessor(None)
+    from Chatbot.configs import Configs
+
+    cfg = Configs()
+
+    cfg.ltp_seg_model_path = "./ltp/models/cws.model"
+    cfg.ltp_seg_lexicon_path = "./ltp/user_lexicon.txt"
+    cfg.ltp_pos_model_path = "./ltp/models/pos.model"
+    cfg.ltp_rec_model_path = "./ltp/models/ner.model"
+    cfg.ltp_par_model_path = "./ltp/models/parser.model"
+
+    p = Preprocessor(configs=cfg)
 
     stmt = p.process(Statement(u"这是一个测试句子。"))
-
-    print(stmt.get_segment())
-    print(stmt.get_pos())
-    print(stmt.get_emotion())
