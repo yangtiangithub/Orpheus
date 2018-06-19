@@ -16,7 +16,8 @@ class AimlNLU(object):
         self.aiml.respond(configs.aiml_nlu_pattern)
 
     def process(self, stmt):
-        res = self.aiml.respond(stmt.text)
+        sentence = " ".join(stmt.get_words())
+        res = self.aiml.respond(sentence)
 
         if self.configs.debug_mode: print("[AimlNLU]:\'%s\'" % res)
 

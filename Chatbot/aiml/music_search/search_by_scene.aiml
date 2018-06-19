@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml version="1.0">
     <category>
-        <pattern>搜适合 * 时候听的歌</pattern>
+        <pattern>搜 适合 * 时候 听 的 歌</pattern>
         <template>
         <think>
         <set name = "song_scene"> <star/> </set>

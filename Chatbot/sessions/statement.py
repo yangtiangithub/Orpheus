@@ -13,18 +13,20 @@ class Statement(object):
 
         self.text = text
 
-        self.segment = None
+        self.words = None
         self.pos = None
+        self.arcs = None
+
         self.emotion = None
 
         self.from_user = from_user
 
 
-    def set_segment(self, segment):
-        self.segment = segment
+    def set_words(self, words):
+        self.words = words
 
-    def get_segment(self):
-        return self.segment
+    def get_words(self):
+        return self.words
 
     def set_emotion(self, emotion):
         self.emotion = emotion
@@ -37,3 +39,9 @@ class Statement(object):
 
     def get_pos(self):
         return self.pos
+
+    def set_arcs(self, arcs):
+        self.arcs = arcs
+
+    def get_arcs(self):
+        return self.arcs

@@ -31,3 +31,11 @@ class Configs(object):
         self.ltp_pos_model_path = "./utils/ltp/models/pos.model"
         self.ltp_rec_model_path = "./utils/ltp/models/ner.model"
         self.ltp_par_model_path = "./utils/ltp/models/parser.model"
+
+        # Py2Neo
+        self.neo_db_ip = "http://110.64.66.199:7474/"
+        self.neo_username = "neo4j"
+        self.neo_password = "123456"
+
+        # Dependency Parsing NLU
+        self.dp_template_path = "./nlu/templates/template.xml"

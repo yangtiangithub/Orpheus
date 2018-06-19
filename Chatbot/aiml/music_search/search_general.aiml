@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml version="1.0">
     <category>
-        <pattern>搜 * 的歌</pattern>
+        <pattern>搜 * 的 歌</pattern>
         <template>
         <think>
         <set name = "entity_name"> <star/> </set>

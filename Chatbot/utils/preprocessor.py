@@ -20,10 +20,11 @@ class Preprocessor(object):
         seg, pos = self.cut(stmt.text)
         arcs = self.dependency_parse(seg, pos)
 
-        stmt.set_segment(list(seg))
+        stmt.set_words(list(seg))
         stmt.set_pos(list(pos))
+        stmt.set_arcs(arcs)
 
-        stmt.set_emotion(self.emotion_analysis(stmt.text, None))
+        stmt.set_emotion(self.emotion_analysis(stmt.text))
 
         return stmt
 
@@ -38,10 +39,10 @@ class Preprocessor(object):
         arcs = self.ltp_util.Parser(seg, pos)
         parse_result = []
         for item in list(arcs):
-            parse_result.append((item.head-1, item.relation))
+            parse_result.append((item.head, item.relation))
         return parse_result
 
-    def emotion_analysis(self, text, contexts):
+    def emotion_analysis(self, text):
         # 返回情感分析结果
         return None
 
